@@ -21,6 +21,10 @@ func (myNode *myTreeNode) postOrder() {
 	myNode.Print()
 }
 
+func (myNode *myTreeNode) Traverse() {
+	fmt.Println("This method is shadowed.")
+}
+
 func main() {
 	//root := tree.Node{Value: 3}
 	root := myTreeNode{&tree.Node{Value: 3}}
@@ -36,8 +40,13 @@ func main() {
 	//var pRoot *tree.Node
 	//fmt.Println(pRoot)
 
-	fmt.Print("In-order traversal: ")
+	fmt.Printf("%T\n", root)
+
+	fmt.Print("root traversal: ")
 	root.Traverse()
+
+	fmt.Print("In-order traversal: ")
+	root.Node.Traverse()
 	fmt.Println()
 
 	fmt.Print("My own post-order traversal: ")
