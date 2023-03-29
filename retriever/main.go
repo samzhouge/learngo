@@ -14,7 +14,7 @@ type Retriever interface {
 }
 
 type Poster interface {
-	Post(url string, form map[string]string)
+	Post(url string, form map[string]string) string
 }
 
 type RetrieverPoster interface {
